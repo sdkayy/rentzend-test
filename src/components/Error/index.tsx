@@ -27,7 +27,7 @@ interface Props {
 
 export default (props: Props) => (
   <ErrorHolder>
-    <EmojiTop role="img" aria-labelledby="message">
+    <EmojiTop role="img" aria-label="message">
       🤖
     </EmojiTop>
     <ErrorText id="message">{props.message}</ErrorText>

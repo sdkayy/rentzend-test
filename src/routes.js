@@ -3,10 +3,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Error from './components/Error';
 import styled from 'styled-components';
+import Toast from './components/Toast';
 
 // Routes
-const Portal = loadable(() => import('./views/Portal'));
-const Dashboard = loadable(() => import('./views/Dashboard'));
+const Submission = loadable(() => import('./views/Submission'));
+const Form = loadable(() => import('./views/Form'));
 
 const Container = styled.div`
   width: 100%;
@@ -27,10 +28,10 @@ class Routes extends React.Component {
     return (
       <Router>
         <div style={{ height: '100%' }}>
+          <Toast />
           <Switch>
-            <Route path="/" exact={true} component={Portal} />
-            <Route path="/portal" component={Portal} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" exact={true} component={Form} />
+            <Route path="/app/:id" component={Submission} />
             <Route component={FourOhFour} />
           </Switch>
         </div>

@@ -1,3 +1,13 @@
 import { combineReducers } from 'redux';
+import toastReducer from './toast';
 
-export default combineReducers({});
+const _rootReducer = combineReducers({
+  toasts: toastReducer,
+});
+
+export const rootReducer = (state: any, action: any) => {
+  switch (action.type) {
+    default:
+      return _rootReducer(state, action);
+  }
+};
